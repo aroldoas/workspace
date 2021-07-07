@@ -1,0 +1,15 @@
+{
+    "private": "true",
+    "name": "yarn-workspace",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "boiler-mern": "yarn workspace boiler-mern start",
+        "boiler-node-mongo": "yarn workspace boiler-node-mongo start",
+        "start": "concurrently --kill-others-on-fail \"yarn boiler-node-mongo\"  \"yarn boiler-mern\""
+    },
+    "dependencies": {
+        "concurrently": "^6.2.0"
+    }
+}
